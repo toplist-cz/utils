@@ -52,11 +52,8 @@ def __table_to_csv(table):
     return cvs_data
 
 def main():
-    """Response example:
-        "{'dateFrom': '2025-05-30', 'dateTo': '2025-05-30', 'filters': [], 'rowLimit': 100, 'statResults': {'pageView': {'dataSets': {'pageview': {'data': [146, 124, 76, 61, 73, 207, 275, 414, 577, 577, 525, 521, 536, 583, 376, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'title': 'zhlédnutí'}}, 'title': 'zhlédnutí', 'titleShort': 'zhlédnutí'}, 'visits': {'dataSets': {'visits': {'data': [66, 42, 40, 38, 39, 68, 111, 138, 171, 176, 178, 161, 173, 159, 120, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'title': 'návštěvy'}}, 'title': 'počet návštěv', 'titleShort': 'návštěvy', 'axeY': 'návštěvy'}}, 'stats': ['visits', 'pageView'], 'stepId': 'hour', 'timeline': ['2025-05-30T00:00:00', '2025-05-30T01:00:00', '2025-05-30T02:00:00', '2025-05-30T03:00:00', '2025-05-30T04:00:00', '2025-05-30T05:00:00', '2025-05-30T06:00:00', '2025-05-30T07:00:00', '2025-05-30T08:00:00', '2025-05-30T09:00:00', '2025-05-30T10:00:00', '2025-05-30T11:00:00', '2025-05-30T12:00:00', '2025-05-30T13:00:00', '2025-05-30T14:00:00', '2025-05-30T15:00:00', '2025-05-30T16:00:00', '2025-05-30T17:00:00', '2025-05-30T18:00:00', '2025-05-30T19:00:00', '2025-05-30T20:00:00', '2025-05-30T21:00:00', '2025-05-30T22:00:00', '2025-05-30T23:00:00'], 'toplistId': 1, 'type': 'profi', 'uuid': '5324eae9c02148778908056386f1fa3b'}",done,5324eae9c02148778908056386f1fa3b
-    """
-
     data = fetch_data()['data']
+
     for stat in data['stats']:
         cvs_data = []
         if 'table' in data['statResults'][stat]['dataSets']:
